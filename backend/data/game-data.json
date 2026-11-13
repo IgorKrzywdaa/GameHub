@@ -1,0 +1,38 @@
+﻿[
+  {
+    "id": 1,
+    "title": "Cyber Legends",
+    "genre": "RPG",
+    "description": "Futuristic role-playing game set in an open world.",
+    "releaseYear": 2027,
+    "status": "IN_DEVELOPMENT",
+    "developer": "GameHub Studio"
+  },
+  {
+    "id": 2,
+    "title": "Shadow Arena",
+    "genre": "Action",
+    "description": "Competitive action game with multiplayer combat.",
+    "releaseYear": 2026,
+    "status": "BETA",
+    "developer": "GameHub Studio"
+  },
+  {
+    "id": 3,
+    "title": "Pixel Kingdom",
+    "genre": "Strategy",
+    "description": "Strategy game focused on building and managing a kingdom.",
+    "releaseYear": 2028,
+    "status": "PLANNING",
+    "developer": "GameHub Studio"
+  },
+  {
+    "id": 4,
+    "title": "Racing Horizon",
+    "genre": "Racing",
+    "description": "Arcade racing game with multiple tracks and vehicles.",
+    "releaseYear": 2026,
+    "status": "RELEASED",
+    "developer": "GameHub Studio"
+  }
+]

@@ -1,0 +1,123 @@
+
+/* PODSTAWOWE USTAWIENIA */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #101522;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* NAGLOWEK */
+header {
+  background-color: #181f30;
+  padding: 25px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #168cff;
+}
+
+header h1 {
+  color: #168cff;
+  font-size: 30px;
+}
+
+/* MENU NAWIGACYJNE */
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #168cff;
+}
+
+/* GLOWNA SEKCJA */
+main {
+  padding: 50px 8%;
+}
+
+main section {
+  margin-bottom: 45px;
+}
+
+h2 {
+  color: #168cff;
+  margin-bottom: 15px;
+  font-size: 26px;
+}
+
+/* LISTA GIER */
+.game-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 25px;
+}
+
+/* KARTY GIER */
+.game-card {
+  background-color: #1c263b;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #303d56;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  border-color: #168cff;
+}
+
+.game-card h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.game-card p {
+  color: #b5c0d3;
+}
+
+/* STOPKA */
+footer {
+  background-color: #181f30;
+  text-align: center;
+  padding: 25px;
+  color: #aab5c8;
+  border-top: 1px solid #303d56;
+}
+
+/* RESPONSYWNOSC */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+  }
+
+  .game-list {
+      grid-template-columns: 1fr;
+  }
+
+  main {
+      padding: 30px 5%;
+  }
+}

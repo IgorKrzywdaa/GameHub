@@ -1,5 +1,4 @@
 # GameHub
-
 ## O projekcie
 
 GameHub to platforma gamingowa, której celem jest gromadzenie informacji o grach komputerowych oraz ułatwienie graczom odkrywania nowych tytułów.
