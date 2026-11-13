@@ -1,57 +1,42 @@
 # GameHub
+## O projekcie
 
-GameHub to projekt zespolowy poswiecony zarzadzaniu informacjami o grach oraz pracownikach studia tworzacego gry.
+GameHub to platforma gamingowa, której celem jest gromadzenie informacji o grach komputerowych oraz ułatwienie graczom odkrywania nowych tytułów.
 
-## Struktura projektu
+Projekt zakłada stworzenie przejrzystego miejsca, w którym użytkownicy będą mogli przeglądać dostępne gry, poznawać ich opisy i gatunki oraz zapoznawać się z informacjami na ich temat.
 
-- backend/ - aplikacja backendowa oparta na Spring Boot
-- backend/src/main/java/ - kod zrodlowy aplikacji
-- backend/data/ - przykladowe dane
-- backend-design.md - dokumentacja architektury backendu
-- docs/ - dokumentacja projektu
+## Cele projektu
 
-## Wykorzystane technologie
+- Stworzenie przejrzystej platformy dla graczy.
+- Ułatwienie wyszukiwania i odkrywania gier.
+- Zapewnienie czytelnej prezentacji informacji o grach.
+- Przygotowanie podstawowej struktury umożliwiającej dalszy rozwój platformy.
 
-- Java 21
-- Spring Boot 4
-- Spring Web MVC
-- Spring Data JPA
-- H2 Database
-- Maven
+## Zakres projektu
 
-## Funkcjonalnosci backendu
+Projekt obejmuje przygotowanie interfejsu użytkownika, opracowanie założeń części backendowej oraz przykładowej struktury danych.
 
-- Zarzadzanie grami
-- Wyszukiwanie gier wedlug ID i gatunku
-- Zarzadzanie pracownikami
-- Wyszukiwanie pracownikow wedlug adresu e-mail
-- Dodawanie, edytowanie i usuwanie rekordow
+## Zespół projektowy
 
-## Uruchomienie backendu
+| Członek zespołu | Rola |
+|---|---|
+| Igor | Project Leader / QA Tester |
+| Mateusz | Backend Developer |
+| Marcel | Frontend Developer |
 
-Wymagania:
-- Java 21
-- Dostep do internetu
+## Technologie
 
-W terminalu:
+- HTML
+- CSS
+- JavaScript
+- JSON
+- Git
+- GitHub
 
-    cd backend
-    .\mvnw.cmd clean test
-    .\mvnw.cmd spring-boot:run
+## Organizacja pracy
 
-Aplikacja dziala pod adresem http://localhost:8080
+Prace nad projektem prowadzone są z wykorzystaniem GitHub. Zespół korzysta z osobnych gałęzi, systemu Issues oraz Pull Requestów w celu zarządzania zadaniami i kontrolowania zmian.
 
-Konsola H2: http://localhost:8080/h2-console
+## Status projektu
 
-## Baza danych
-
-Projekt korzysta z bazy H2 dzialajacej w pamieci operacyjnej. Dane sa resetowane po ponownym uruchomieniu aplikacji.
-
-## Architektura backendu
-
-Aplikacja wykorzystuje podzial na warstwy:
-
-- Model - reprezentacja danych
-- Repository - komunikacja z baza danych
-- Service - logika biznesowa
-- Controller - obsluga zadan HTTP
+Projekt jest w trakcie realizacji.
