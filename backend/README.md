@@ -1,54 +1,92 @@
-﻿# GameHub Team - Backend
+# GameHub Backend
 
-## Project Description
+Backend projektu GameHub odpowiada za zarzadzanie danymi gier i pracownikow studia.
 
-This directory contains the backend structure and technical documentation for the GameHub Team project.
+## Technologie
 
-The backend is responsible for managing game information and supporting internal data operations.
+- Java 21
+- Spring Boot 4
+- Spring Web MVC
+- Spring Data JPA
+- Jakarta Persistence API
+- H2 Database
+- Maven
+- JUnit 5
+- Mockito
 
-## Directory Structure
+## Architektura
 
-- src/com/gamehub/model - data models
-- src/com/gamehub/service - business logic
-- src/com/gamehub/repository - data access
-- src/com/gamehub/controller - application controllers
-- data - example game records
-
-## Main Components
+Aplikacja zostala podzielona na cztery podstawowe warstwy:
 
 ### Model
-Defines data structures used in the system.
-
-### Service
-Contains business logic and operations related to games and employees.
+Zawiera klasy reprezentujace dane:
+- Game
+- Employee
+- GameStatus
 
 ### Repository
-Organizes data storage and retrieval operations.
+Odpowiada za komunikacje z baza danych:
+- GameRepository
+- EmployeeRepository
+
+### Service
+Zawiera logike biznesowa:
+- GameService
+- EmployeeService
 
 ### Controller
-Defines the interface through which other application components can access backend functionality.
+Obsluguje zapytania HTTP:
+- GameController
+- EmployeeController
 
-## Game Management
+## REST API
 
-The proposed backend supports:
+### Gry - /api/games
 
-- Creating game records.
-- Retrieving game information.
-- Updating game details.
-- Deleting game records.
-- Filtering games by genre.
-- Tracking production status.
+| Metoda | Endpoint | Funkcja |
+|---|---|---|
+| GET | /api/games | Pobranie wszystkich gier |
+| GET | /api/games/{id} | Pobranie gry po ID |
+| GET | /api/games/genre/{genre} | Filtrowanie wedlug gatunku |
+| POST | /api/games | Dodanie gry |
+| PUT | /api/games/{id} | Aktualizacja gry |
+| DELETE | /api/games/{id} | Usuniecie gry |
 
-## Data Format
+### Pracownicy - /api/employees
 
-Example game records are stored in data/game-data.json.
+| Metoda | Endpoint | Funkcja |
+|---|---|---|
+| GET | /api/employees | Pobranie pracownikow |
+| GET | /api/employees/{id} | Pobranie pracownika po ID |
+| GET | /api/employees/email/{email} | Wyszukiwanie po e-mailu |
+| POST | /api/employees | Dodanie pracownika |
+| PUT | /api/employees/{id} | Aktualizacja pracownika |
+| DELETE | /api/employees/{id} | Usuniecie pracownika |
 
-Each record contains an ID, title, genre, description, release year, production status and developer.
+## Baza danych
 
-## Development Notes
+Projekt korzysta z H2 In-Memory Database.
 
-The current structure represents a backend design prototype.
+Dane sa zarzadzane przez Spring Data JPA. Aktualnie baza dziala w pamieci operacyjnej, dlatego dane sa resetowane po restarcie aplikacji.
 
-It does not require a running server or database.
+## Uruchomienie
 
-The architecture can be extended with a REST API, database integration and user authentication.
+Wymagany jest Java 21.
+
+Uruchomienie testow:
+
+    .\mvnw.cmd clean test
+
+Uruchomienie aplikacji:
+
+    .\mvnw.cmd spring-boot:run
+
+Aplikacja dziala pod adresem http://localhost:8080.
+
+## Testy
+
+Testy jednostkowe GameService znajduja sie w:
+
+src/test/java/com/gamehub/service/GameServiceTest.java
+
+Testy wykorzystuja JUnit 5 i Mockito.

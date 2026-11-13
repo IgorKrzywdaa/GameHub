@@ -1,80 +1,137 @@
-﻿# GameHub Team - Backend Design
+# Projekt architektury backendu - GameHub
 
-## 1. Project Overview
+## 1. Cel
 
-The backend is responsible for managing information about games developed by GameHub Team.
+Celem backendu GameHub jest zapewnienie warstwy odpowiedzialnej za przetwarzanie danych, logike biznesowa oraz komunikacje z frontendem aplikacji.
 
-Its main purpose is to organize game data, support internal company operations and provide a foundation for future application development.
+Backend udostepnia interfejs REST API umozliwiajacy zarzadzanie grami oraz pracownikami studia.
 
-## 2. Backend Architecture
+## 2. Wykorzystane technologie
 
-The backend is divided into four logical layers.
+- Java 21
+- Spring Boot 4
+- Spring Web MVC
+- Spring Data JPA
+- Jakarta Persistence API
+- H2 Database
+- Maven
 
-### Model
-Contains classes representing the main data structures:
-- Game
-- Employee
-- GameStatus
+## 3. Architektura aplikacji
 
-### Controller
-Responsible for handling requests and exposing backend functionality.
+Aplikacja wykorzystuje architekture warstwowa.
 
-Example:
-- GameController
+### 3.1 Model
 
-### Service
-Contains business logic and operations performed on application data.
+Warstwa modelu reprezentuje dane wykorzystywane przez aplikacje.
 
-Examples:
-- GameService
-- EmployeeService
+Game:
+- id
+- title
+- genre
+- description
+- releaseYear
+- status
+- developer
 
-### Repository
-Responsible for organizing data access and storage operations.
+Employee:
+- id
+- firstName
+- lastName
+- position
+- email
 
-Example:
+GameStatus:
+- PLANNING
+- IN_DEVELOPMENT
+- BETA
+- RELEASED
+- ON_HOLD
+
+### 3.2 Repository
+
+Warstwa Repository odpowiada za dostep do danych.
+
+W projekcie wykorzystano:
 - GameRepository
+- EmployeeRepository
 
-## 3. Game Data Structure
+Repozytoria rozszerzaja JpaRepository, co zapewnia podstawowe operacje CRUD oraz mozliwosc tworzenia zapytan na podstawie nazw metod.
 
-Each game contains:
-- id - unique game identifier
-- title - game title
-- genre - game genre
-- description - game description
-- releaseYear - planned release year
-- status - production status
-- developer - responsible development team
+### 3.3 Service
 
-## 4. Main Functionalities
+Warstwa Service zawiera logike biznesowa.
 
-- Adding new games.
-- Retrieving game information.
-- Updating game records.
-- Removing games.
-- Filtering games by genre.
-- Managing production statuses.
-- Managing employee information.
+GameService odpowiada za:
+- pobieranie wszystkich gier,
+- pobieranie gry wedlug ID,
+- filtrowanie gier wedlug gatunku,
+- dodawanie gier,
+- aktualizowanie gier,
+- usuwanie gier.
 
-## 5. Data Management
+EmployeeService odpowiada za:
+- pobieranie pracownikow,
+- wyszukiwanie pracownika wedlug ID,
+- wyszukiwanie pracownika wedlug adresu e-mail,
+- dodawanie pracownikow,
+- aktualizowanie pracownikow,
+- usuwanie pracownikow.
 
-Game information is represented using structured objects.
+### 3.4 Controller
 
-JSON is used as an example format for exchanging and presenting game data.
+Warstwa Controller udostepnia funkcjonalnosci poprzez REST API.
 
-The repository layer separates data access from business logic.
+GameController obsluguje endpointy /api/games.
 
-## 6. Future Development
+EmployeeController obsluguje endpointy /api/employees.
 
-Possible improvements include:
-- REST API implementation.
-- Relational database integration.
-- User authentication and authorization.
-- Frontend integration.
-- Advanced game filtering and searching.
+Kontrolery wykorzystuja metody HTTP GET, POST, PUT i DELETE.
 
-## 7. Summary
+## 4. Baza danych
 
-The proposed architecture separates data models, business logic, data access and request handling.
+Do przechowywania danych wykorzystano H2 Database.
 
-This structure makes the backend easier to maintain, extend and integrate with other parts of the GameHub Team platform.
+Dostep do bazy realizowany jest za pomoca Spring Data JPA.
+
+Dane sa mapowane na tabele za pomoca Jakarta Persistence API.
+
+Aktualna konfiguracja wykorzystuje baze In-Memory, ktorej zawartosc jest resetowana po ponownym uruchomieniu aplikacji.
+
+## 5. Komunikacja z frontendem
+
+Frontend komunikuje sie z backendem za pomoca zapytan HTTP.
+
+Dane przesylane sa w formacie JSON.
+
+Podstawowy adres API:
+
+http://localhost:8080
+
+Glowne zasoby:
+- /api/games
+- /api/employees
+
+## 6. Obsluga bledow
+
+Serwisy zglaszaja wyjatek RuntimeException w przypadku nieodnalezienia rekordu.
+
+Kontrolery zwracaja odpowiedzi HTTP za pomoca ResponseEntity.
+
+## 7. Testowanie
+
+Logika GameService jest sprawdzana za pomoca testow jednostkowych.
+
+Wykorzystane narzedzia:
+- JUnit 5
+- Mockito
+
+Testy obejmuja pobieranie, dodawanie, aktualizowanie, usuwanie i wyszukiwanie gier.
+
+## 8. Mozliwosci dalszego rozwoju
+
+- Zastosowanie trwalej bazy danych, np. PostgreSQL.
+- Rozbudowa walidacji danych wejsciowych.
+- Wprowadzenie centralnej obslugi wyjatkow.
+- Dodanie autoryzacji i uwierzytelniania uzytkownikow.
+- Rozbudowa testow integracyjnych.
+- Integracja z frontendem GameHub.

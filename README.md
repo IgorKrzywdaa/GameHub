@@ -1,16 +1,8 @@
 # GameHub
 
-GameHub to projekt zespolowy poswiecony zarzadzaniu informacjami o grach oraz pracownikach studia tworzacego gry.
+GameHub to projekt zespolowy dotyczacy zarzadzania informacjami o grach oraz pracownikach studia tworzacego gry.
 
-## Struktura projektu
-
-- backend/ - aplikacja backendowa oparta na Spring Boot
-- backend/src/main/java/ - kod zrodlowy aplikacji
-- backend/data/ - przykladowe dane
-- backend-design.md - dokumentacja architektury backendu
-- docs/ - dokumentacja projektu
-
-## Wykorzystane technologie
+## Technologie
 
 - Java 21
 - Spring Boot 4
@@ -19,39 +11,62 @@ GameHub to projekt zespolowy poswiecony zarzadzaniu informacjami o grach oraz pr
 - H2 Database
 - Maven
 
-## Funkcjonalnosci backendu
+## Struktura projektu
 
-- Zarzadzanie grami
-- Wyszukiwanie gier wedlug ID i gatunku
-- Zarzadzanie pracownikami
-- Wyszukiwanie pracownikow wedlug adresu e-mail
-- Dodawanie, edytowanie i usuwanie rekordow
+- backend/ - aplikacja backendowa
+- backend/src/main/java/ - kod zrodlowy
+- backend/src/test/ - testy jednostkowe
+- backend/data/ - przykladowe dane
+- backend-design.md - dokumentacja architektury
+- docs/ - dokumentacja API i bazy danych
 
-## Uruchomienie backendu
+## Funkcjonalnosci
+
+- Zarzadzanie grami.
+- Zarzadzanie pracownikami.
+- Dodawanie, pobieranie, aktualizacja i usuwanie danych.
+- Wyszukiwanie gier wedlug gatunku.
+- Wyszukiwanie pracownikow wedlug adresu e-mail.
+- Komunikacja poprzez REST API.
+
+## Uruchomienie
 
 Wymagania:
 - Java 21
-- Dostep do internetu
+- Dostep do internetu podczas pobierania zaleznosci Maven.
 
-W terminalu:
+Uruchomienie z katalogu glownego:
 
     cd backend
     .\mvnw.cmd clean test
     .\mvnw.cmd spring-boot:run
 
-Aplikacja dziala pod adresem http://localhost:8080
+Aplikacja dostepna jest pod adresem:
 
-Konsola H2: http://localhost:8080/h2-console
+http://localhost:8080
+
+Konsola H2:
+
+http://localhost:8080/h2-console
+
+## Dokumentacja
+
+- [Dokumentacja backendu](backend/README.md)
+- [Architektura backendu](backend-design.md)
+- [Dokumentacja REST API](docs/api.md)
+- [Dokumentacja bazy danych](docs/database.md)
+
+## Testowanie
+
+Testy jednostkowe znajduja sie w katalogu:
+
+backend/src/test/java/
+
+Uruchomienie testow:
+
+    cd backend
+    .\mvnw.cmd clean test
 
 ## Baza danych
 
-Projekt korzysta z bazy H2 dzialajacej w pamieci operacyjnej. Dane sa resetowane po ponownym uruchomieniu aplikacji.
-
-## Architektura backendu
-
-Aplikacja wykorzystuje podzial na warstwy:
-
-- Model - reprezentacja danych
-- Repository - komunikacja z baza danych
-- Service - logika biznesowa
-- Controller - obsluga zadan HTTP
+Projekt wykorzystuje H2 In-Memory Database. Dane sa przechowywane w pamieci i resetowane po ponownym uruchomieniu aplikacji.
