@@ -39,8 +39,4 @@ Prace nad projektem prowadzone są z wykorzystaniem GitHub. Zespół korzysta z 
 
 ## Status projektu
 
-<<<<<<< HEAD
-Projekt jest w trakcie realizacji.
-=======
-Projekt jest zakończony!!!!
->>>>>>> 533bfb6 (Aktualizacja dokumentacji projektu GameHub)
+Projekt jest zakończony!
