@@ -1,72 +1,42 @@
 # GameHub
+## O projekcie
 
-GameHub to projekt zespolowy dotyczacy zarzadzania informacjami o grach oraz pracownikach studia tworzacego gry.
+GameHub to platforma gamingowa, której celem jest gromadzenie informacji o grach komputerowych oraz ułatwienie graczom odkrywania nowych tytułów.
+
+Projekt zakłada stworzenie przejrzystego miejsca, w którym użytkownicy będą mogli przeglądać dostępne gry, poznawać ich opisy i gatunki oraz zapoznawać się z informacjami na ich temat.
+
+## Cele projektu
+
+- Stworzenie przejrzystej platformy dla graczy.
+- Ułatwienie wyszukiwania i odkrywania gier.
+- Zapewnienie czytelnej prezentacji informacji o grach.
+- Przygotowanie podstawowej struktury umożliwiającej dalszy rozwój platformy.
+
+## Zakres projektu
+
+Projekt obejmuje przygotowanie interfejsu użytkownika, opracowanie założeń części backendowej oraz przykładowej struktury danych.
+
+## Zespół projektowy
+
+| Członek zespołu | Rola |
+|---|---|
+| Igor | Project Leader / QA Tester |
+| Mateusz | Backend Developer |
+| Marcel | Frontend Developer |
 
 ## Technologie
 
-- Java 21
-- Spring Boot 4
-- Spring Web MVC
-- Spring Data JPA
-- H2 Database
-- Maven
+- HTML
+- CSS
+- JavaScript
+- JSON
+- Git
+- GitHub
 
-## Struktura projektu
+## Organizacja pracy
 
-- backend/ - aplikacja backendowa
-- backend/src/main/java/ - kod zrodlowy
-- backend/src/test/ - testy jednostkowe
-- backend/data/ - przykladowe dane
-- backend-design.md - dokumentacja architektury
-- docs/ - dokumentacja API i bazy danych
+Prace nad projektem prowadzone są z wykorzystaniem GitHub. Zespół korzysta z osobnych gałęzi, systemu Issues oraz Pull Requestów w celu zarządzania zadaniami i kontrolowania zmian.
 
-## Funkcjonalnosci
+## Status projektu
 
-- Zarzadzanie grami.
-- Zarzadzanie pracownikami.
-- Dodawanie, pobieranie, aktualizacja i usuwanie danych.
-- Wyszukiwanie gier wedlug gatunku.
-- Wyszukiwanie pracownikow wedlug adresu e-mail.
-- Komunikacja poprzez REST API.
-
-## Uruchomienie
-
-Wymagania:
-- Java 21
-- Dostep do internetu podczas pobierania zaleznosci Maven.
-
-Uruchomienie z katalogu glownego:
-
-    cd backend
-    .\mvnw.cmd clean test
-    .\mvnw.cmd spring-boot:run
-
-Aplikacja dostepna jest pod adresem:
-
-http://localhost:8080
-
-Konsola H2:
-
-http://localhost:8080/h2-console
-
-## Dokumentacja
-
-- [Dokumentacja backendu](backend/README.md)
-- [Architektura backendu](backend-design.md)
-- [Dokumentacja REST API](docs/api.md)
-- [Dokumentacja bazy danych](docs/database.md)
-
-## Testowanie
-
-Testy jednostkowe znajduja sie w katalogu:
-
-backend/src/test/java/
-
-Uruchomienie testow:
-
-    cd backend
-    .\mvnw.cmd clean test
-
-## Baza danych
-
-Projekt wykorzystuje H2 In-Memory Database. Dane sa przechowywane w pamieci i resetowane po ponownym uruchomieniu aplikacji.
+Projekt jest zakończony!
